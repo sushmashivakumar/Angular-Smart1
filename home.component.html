@@ -1,0 +1,90 @@
+<div class="mat-elevation-z6" style="width: 90%;margin: auto;">
+    <mat-form-field  appearance="fill">
+        <mat-label>Feature Owner</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Select</option>
+          <option value="saab">Mike Sai</option>
+          <option value="mercedes">Sridhar</option>
+          <option value="audi">DM</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Function</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Select</option>
+          <option value="saab">Development</option>
+          <option value="mercedes">Validation</option>
+          <option value="mercedes">Horizontal</option>
+        </select>
+      </mat-form-field>
+      <mat-slide-toggle>Feature ON or OFF</mat-slide-toggle>
+      <mat-form-field appearance="fill">
+        <mat-label>Domain</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Select</option>
+          <option value="saab">Firmware</option>
+          <option value="mercedes">Linux - Yocto BSP</option>
+          <option value="audi">Manageability</option>
+        </select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Features</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Select</option>
+          <option value="saab">BIOS</option>
+          <option value="mercedes">TSN</option>
+          <option value="audi">Media</option>
+        </select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Mode</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Select</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field>
+      <button mat-button color="primary">Add Feature</button>
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> Feature Owner </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Function </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Feature ON or OFF </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Domain </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Features </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      </ng-container> -->
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
